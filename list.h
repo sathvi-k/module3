@@ -31,3 +31,6 @@ void lapply(void (*fn)(car_t *cp));
  * the designated plate; return NULL if not present
  */
 car_t *lremove(char *platep);
+
+/* print the list in order, for testing purposes*/
+void printlist();

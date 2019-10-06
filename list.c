@@ -1,62 +1,84 @@
-/* list.c --- 
+/* list.c --- Create a linked list
  * 
  * 
- * Author: Sathvika R. Korandla
- * Created: Sat Oct  5 14:19:35 2019 (-0400)
- * Version: 
+ * Author: John Kariuki,Hana, Aya and Sathvika
+ * Created: Sat Oct  5 21:13:05 2019 (-0400)
+ * Version: 1.0
  * 
- * Description: 
+ * Description:Create a linked list of cars 
  * 
  */
-#include "list.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include "list.h"
+#include <string.h>
 
 static car_t *front=NULL;
 
 int32_t lput(car_t *cp){
-	/*car_t *cp = (car_t*)malloc(sizeof(car_t));*/
 	if (front==NULL){
-		front=*cp;
-		*cp->next=NULL; /*might need*/
+		front=cp;
+		cp->next=NULL;
 	}
-	else {
-		*cp->next=front;
-		front=*cp;
+	else{
+		cp->next=front;
+		front=cp;		
 	}
 	return 0;
 }
 
 car_t *lget(){
-	car_t *save=NULL;
-	if (front!=NULL){
+	if(front!=NULL){
+		car_t *save;
 		save=front;
 		front=front->next;
+		return save;
+		}
+	else{
+		return NULL;
 	}
-	return save;
 }
 
-void lapply(void (*fn)(car_t *cp)) {
-	car_t *p;
-	if (front!=NULL){
-		for(p=front; p!=NULL; p=p->next)
-			(*fn)(&p);
+void lapply(void (*fn)(car_t *cp)){
+	if(front!=NULL){
+		car_t *p;
+		for(p=front;p!=NULL;p=p->next){
+			fn(p);
+		}
 	}
-}
-	else {
-}
 }
 
 car_t *lremove(char *platep){
 	car_t *save=NULL;
-	if (front!=NULL){
-		car_t *cp;
-		for(cp=front;cp!=NULL;cp=cp->next){
-			if (strcmp(cp->plate,*platep)==0){
-				save=cp;
-				cp=cp->next;
+	if(front!=NULL){
+		car_t *p;
+		car_t *f;
+		for(p=front;p!=NULL;p=p->next){
+			if(strcmp(p->plate,platep)==0){
+				if(p==front){
+					save=p;
+					front=p->next;
+				}
+				else if(p->next==NULL){
+					save=p;
+					f->next=NULL;
+				}
+				else{
+					save=p;
+					f->next=p->next;
+				}
 			}
+			f=p;
 		}
 	}
 	return save;
 }
- 
+
+void printlist(){
+	car_t *p;
+	for(p=front;p!=NULL;p=p->next){
+		printf("%s\n",p->plate);
+	}
+}
