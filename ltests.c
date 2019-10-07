@@ -30,15 +30,20 @@ car_t *make_car(char *platep, double price, int year) {
 	return c;
 }
 
+void get_price (car_t *cp){
+	printf("this car's price is: %f\n", cp->price);
+}
+
 int main(void){
 	car_t *c1=make_car("ABCD1234",10000,2000);
 	car_t *c2=make_car("BIGGREEN",20000,2019);
 	car_t *c3=make_car("48C03F6H",15000,2007);
 	car_t *c4=make_car("ILLCUL8R",30000,2006);
 
-	printf("Getting from empty list:%s\n",lget());
-	printf("Apply a function to a empty list:%s\n",lapply(lget()));
-	printf("Remove from an empty list:%s\n",lremove("HELLO123"));
+	printf("Getting from empty list:%s\n",lget()->plate);
+	printf("Apply a function to a empty list:\n");
+	lapply(get_price);
+	printf("Remove from an empty list:%s\n",lremove("HELLO123")->plate);
 	printf("Put to an empty list:\n");
 	lput(c1);
 	printf("Current list:\n");
