@@ -1,3 +1,4 @@
 #!/bin/bash
 
 valgrind --leak-check=full ltest1
+valgrind --leak-check=full ltests
