@@ -30,15 +30,12 @@ int32_t lput(car_t *cp){
 }
 
 car_t *lget(){
+	car_t *save=NULL;
 	if(front!=NULL){
-		car_t *save;
 		save=front;
 		front=front->next;
-		return save;
-		}
-	else{
-		return NULL;
 	}
+	return save;
 }
 
 void lapply(void (*fn)(car_t *cp)){

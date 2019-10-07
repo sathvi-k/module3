@@ -40,10 +40,11 @@ int main(void){
 	car_t *c3=make_car("48C03F6H",15000,2007);
 	car_t *c4=make_car("ILLCUL8R",30000,2006);
 
-	printf("Getting from empty list:%s\n",lget()->plate);
+	car_t *get_from_empty_return=lget();
+	printf("get:%p\n", lget());
 	printf("Apply a function to a empty list:\n");
 	lapply(get_price);
-	printf("Remove from an empty list:%s\n",lremove("HELLO123")->plate);
+	//printf("Remove from an empty list:%s\n",lremove("HELLO123")->plate);
 	printf("Put to an empty list:\n");
 	lput(c1);
 	printf("Current list:\n");
