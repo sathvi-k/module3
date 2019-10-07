@@ -1,6 +1,6 @@
 CFLAGS=-Wall -pedantic -std=c11 -I. -g
 
-all:	ltest1
+all:	ltest1 ltests
 
 list.o:	list.c list.h
 				gcc $(CFLAGS) -c list.c
