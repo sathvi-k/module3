@@ -45,7 +45,7 @@ void lapply(void (*fn)(car_t *cp)){
 	if(front!=NULL){
 		car_t *p;
 		for(p=front;p!=NULL;p=p->next){
-			fn(p);
+			*fn(p);
 		}
 	}
 }
