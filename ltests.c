@@ -36,17 +36,40 @@ int main(void){
 	car_t *c3=make_car("48C03F6H",15000,2007);
 	car_t *c4=make_car("ILLCUL8R",30000,2006);
 
-	lget(); /* get from an empty list */
-	lapply(); /* apply a function an empty list */
-	lremove("HELLO123"); /* remove from an empty list */
-	lput(c1); /* put to an empty list */
-	lput(c2); /* put to a non-empty list */
-	lget(); /* get from a non-empty list */
+	printf("Getting from empty list:%s\n",lget());
+	printf("Apply a function to a empty list:%s\n",lapply(lget()));
+	printf("Remove from an empty list:%s\n",lremove("HELLO123"));
+	printf("Put to an empty list:\n");
+	lput(c1);
+	printf("Current list:\n");
+	printlist();
+	printf("Put to a non-empty list:\n");
+	lput(c2);
+	printf("Current list:\n");
+	printlist();
+	printf("Get from a non-empty list:\n");
+	lget();
+	printf("Current list:\n");
+	printlist();
 	lput(c2);
 	lput(c3);
 	lput(c4);
-	lremove("48C03F6H"); /* remove from a non-empty list in the middle */
-	lremove("ABCD1234"); /* remove from a non-empty list at the end */
-	lremove("ILLCUL8R"); /* remove from a non-empty list at the beginning */
-	
+	printf("Remove from a non-empty list in the middle:\n");
+	lremove("48C03F6H");
+	printf("Current list:\n");
 	printlist();
+	printf("Remove from a non-empty list at the end:\n");
+	lremove("ABCD1234");
+	printf("Current list:\n");
+	printlist();
+	printf("Remove from a non-empty list at the beginning");
+	lremove("ILLCUL8R");
+	printf("Current list:\n");
+	printlist();
+
+	
+	free(c1);
+	free(c2);
+	free(c3);
+	free(c4);
+}
