@@ -45,6 +45,9 @@ void lapply(void (*fn)(car_t *cp)){
 			fn(p);
 		}
 	}
+	else{
+		printf("Empty List\n");
+	}
 }
 
 car_t *lremove(char *platep){

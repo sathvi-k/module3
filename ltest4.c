@@ -32,23 +32,42 @@ car_t *make_car(char *platep,double price,int year){
 int main(void){
 	
 	car_t *c1=make_car("KAS 736T",1.5,2004);
-	car_t *c2=make_car("KBW 868L",3.3,2011);                                      
-  car_t *c3=make_car("KLT 200R",5.5,2019);
-
-	int32_t car1=lput(c1);                                                                     
-  int32_t car2=lput(c2);                                                        
-  int32_t car3=lput(c3);     
+	car_t *c2=make_car("KBW 868L",3.3,2011);
+	car_t *c3=make_car("KLT 200R",5.5,2019);
+	car_t *c4=make_car("JOHNSCAR",200,2020);
+	car_t *c5=make_car("PROFTALYORSCAR",150,2015);
 	
-	if(car1==0 && car2==0 && car3==0){
+  car_t *rcar=lremove("KBW 868L");
+	
+	lput(c1);
+	lput(c2);
+	lput(c3);
+	lput(c4);
+	lput(c5);
+	
+	//we add at the front so "KAS 736T" is the last car
+	car_t *rcar1=lremove("KAS 736T");
+	
+	//"PROFTAYLORSCAR" was the last added and thus the first in the list
+	car_t *rcar2=lremove("PROFTALYORSCAR");
+	
+	//remove from the middle
+	car_t *rcar3=lremove("KLT 200R");
+	
+	if(rcar==NULL && rcar1!=NULL && rcar2!=NULL && rcar3!=NULL){
 		free(c1);
 		free(c2);
 		free(c3);
+		free(c4);
+		free(c5);
 		exit(EXIT_SUCCESS);
 	}
 	else{
 		free(c1);
 		free(c2);
 		free(c3);
+		free(c4);
+		free(c5);
 		exit(EXIT_FAILURE);
 	}
 }

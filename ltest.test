@@ -1,0 +1,4 @@
+runtest.sh "ltest1"
+runtest.sh "ltest2"
+runtest.sh "ltest3"
+runtest.sh "ltest4"
