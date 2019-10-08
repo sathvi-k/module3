@@ -46,13 +46,14 @@ void lapply(void (*fn)(car_t *cp)){
 		}
 	}
 	else{
-		printf("Empty List\n");
+		printf("The list is empty, can't apply the function\n");
 	}
 }
 
 car_t *lremove(char *platep){
 	car_t *save=NULL;
 	if(front!=NULL){
+		
 		car_t *p;
 		car_t *f;
 		for(p=front;p!=NULL;p=p->next){
@@ -71,7 +72,7 @@ car_t *lremove(char *platep){
 				}
 			}
 			f=p;
-		}
+			}
 	}
 	return save;
 }

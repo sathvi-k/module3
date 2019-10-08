@@ -40,14 +40,21 @@ int main(void){
 	car_t *c3=make_car("KLT 200R",5.5,2019);
 	
   lapply(get_price);
-	lput(c1);
-	lput(c2);
-	lput(c3);
+	int32_t car1=lput(c1);
+	int32_t car2=lput(c2);
+	int32_t car3=lput(c3);
 	lapply(get_price);
 	
-	free(c1);
-	free(c2);
-	free(c3);
-	exit(EXIT_SUCCESS);
- 
+	if(car1==0 && car2==0 && car3==0){
+		free(c1);
+		free(c2);
+		free(c3);
+		exit(EXIT_SUCCESS);
+	}
+	else{
+		free(c1);
+		free(c2);
+		free(c3);
+		exit(EXIT_FAILURE);
+	}
 }
