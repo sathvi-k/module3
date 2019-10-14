@@ -5,7 +5,7 @@
  * Created: Sat Oct  5 22:35:22 2019 (-0400)
  * Version: 
  * 
- * Description: Test the put() function in list.c
+ * Description: put() to a non-empty list
  * 
  */
 #include <stdio.h>                                                       
@@ -35,13 +35,12 @@ int main(void){
 	car_t *c2=make_car("KBW 868L",3.3,2011);
 	car_t *c3=make_car("KLT 200R",5.5,2019);
 	
-  car_t *gcar=lget();
-	lput(c1);
-	lput(c2);
-	lput(c3);
-	car_t *gcar1=lget();
+  int32_t car1=lput(c1);
+	int32_t car2=lput(c2);
+	int32_t car3=lput(c3);
+
 	
-	if(gcar==NULL && gcar1!=NULL){
+	if(car1==0 && car2==0 && car3==0){
 		free(c1);
 		free(c2);
 		free(c3);

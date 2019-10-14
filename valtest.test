@@ -11,3 +11,21 @@ valgrind --leak-check=full ltest3 2> >(grep -i "0 ERRORS")
 
 echo "ltest4:"
 valgrind --leak-check=full ltest4 2> >(grep -i "0 ERRORS")
+
+echo "ltest5:"
+valgrind --leak-check=full ltest5 2> >(grep -i "0 ERRORS")
+
+echo "ltest6:"
+valgrind --leak-check=full ltest6 2> >(grep -i "0 ERRORS")
+
+echo "ltest7:"
+valgrind --leak-check=full ltest7 2> >(grep -i "0 ERRORS")
+
+echo "ltest8:"
+valgrind --leak-check=full ltest8 2> >(grep -i "0 ERRORS")
+
+echo "ltest9:"
+valgrind --leak-check=full ltest9 2> >(grep -i "0 ERRORS")
+
+echo "ltest10:"
+valgrind --leak-check=full ltest10 2> >(grep -i "0 ERRORS") 
